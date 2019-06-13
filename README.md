@@ -22,3 +22,4 @@ Real-time face recognition program using Google's facenet.
 </br> (Note that, look carefully at the paths of files and folders in all .py)
 ## Result
 <img src="https://github.com/bearsprogrammer/real-time-deep-face-recogniton/blob/master/realtime_demo_pic.jpg" width="60%">
+# face_recognition_hcmus1819
