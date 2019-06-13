@@ -775,4 +775,3 @@ def imresample(img, sz):
 #             for a3 in range(0,3):
 #                 im_data[a1,a2,a3] = img[int(floor(a1*dy)),int(floor(a2*dx)),a3]
 #     return im_data
-

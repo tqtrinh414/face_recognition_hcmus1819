@@ -13,12 +13,12 @@ import detect_face
 import random
 from time import sleep
 
-output_dir_path = '/..Path to output folder../'
+output_dir_path = 'human_data/align'
 output_dir = os.path.expanduser(output_dir_path)
 if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
-datadir = '/..Path to human img data folder../'
+datadir = 'human_data/unalign'
 dataset = facenet.get_dataset(datadir)
 
 print('Creating networks and loading parameters')
@@ -26,7 +26,7 @@ with tf.Graph().as_default():
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.5)
     sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options, log_device_placement=False))
     with sess.as_default():
-        pnet, rnet, onet = detect_face.create_mtcnn(sess, './Path to det1.npy,..')
+        pnet, rnet, onet = detect_face.create_mtcnn(sess, 'data')
 
 minsize = 20  # minimum size of face
 threshold = [0.6, 0.7, 0.7]  # three steps's threshold
@@ -50,7 +50,6 @@ with open(bounding_boxes_filename, "w") as text_file:
             nrof_images_total += 1
             filename = os.path.splitext(os.path.split(image_path)[1])[0]
             output_filename = os.path.join(output_class_dir, filename + '.png')
-            print(image_path)
             if not os.path.exists(output_filename):
                 try:
                     img = misc.imread(image_path)
@@ -103,6 +102,3 @@ with open(bounding_boxes_filename, "w") as text_file:
 
 print('Total number of images: %d' % nrof_images_total)
 print('Number of successfully aligned images: %d' % nrof_successfully_aligned)
-
-
-

@@ -1,0 +1,28 @@
+human_data/align/cuong/6.png 252 441 976 1417
+human_data/align/cuong/2.png 268 542 941 1400
+human_data/align/cuong/7.png 277 456 1000 1415
+human_data/align/cuong/9.png 110 379 1001 1527
+human_data/align/cuong/1.png 82 623 758 1522
+human_data/align/cuong/3.png 112 289 1022 1544
+human_data/align/cuong/5.png 295 500 927 1361
+human_data/align/cuong/10.png 302 467 964 1335
+human_data/align/cuong/8.png 147 307 823 1231
+human_data/align/cuong/4.png 312 465 934 1198
+human_data/align/dtrinh/WIN_20190605_19_54_45_Pro.png 424 316 638 604
+human_data/align/dtrinh/WIN_20190605_19_50_53_Pro.png 631 265 930 658
+human_data/align/dtrinh/27858259_2170873243147668_1564650532261882973_n.png 223 141 428 421
+human_data/align/dtrinh/noel.png 158 432 210 498
+human_data/align/dtrinh/WIN_20190605_19_54_09_Pro.png 553 331 756 583
+human_data/align/dtrinh/CV (2).png 148 221 419 585
+human_data/align/dtrinh/61146144_1307199982789932_3369401774992523264_n.png 470 223 681 479
+human_data/align/dtrinh/avatar.png 164 53 217 123
+human_data/align/dtrinh/old_avatar.png 312 302 699 801
+human_data/align/qtrinh/IMG_2378 (108).png 2948 841 2983 884
+human_data/align/qtrinh/IMG_2453.png 1490 691 2394 1880
+human_data/align/qtrinh/IMG_2293 (43).png 1140 86 2084 1403
+human_data/align/qtrinh/IMG_3379.png 631 444 1766 2001
+human_data/align/qtrinh/IMG_2454.png 1590 601 2365 1534
+human_data/align/qtrinh/IMG_0973.png
+human_data/align/qtrinh/IMG_2455.png 1575 602 2390 1578
+human_data/align/qtrinh/IMG_2452.png 1475 657 2384 1826
+human_data/align/qtrinh/IMG_3380.png 628 445 1765 1990

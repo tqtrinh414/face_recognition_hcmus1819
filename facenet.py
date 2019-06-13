@@ -332,9 +332,10 @@ def get_dataset(paths, has_class_directories=True):
         for i in range(nrof_classes):
             class_name = classes[i]
             facedir = os.path.join(path_exp, class_name)
+            print(facedir)
             image_paths = get_image_paths(facedir)
+            print(image_paths)
             dataset.append(ImageClass(class_name, image_paths))
-  
     return dataset
 
 def get_image_paths(facedir):
@@ -343,7 +344,7 @@ def get_image_paths(facedir):
         images = os.listdir(facedir)
         image_paths = [os.path.join(facedir,img) for img in images]
     return image_paths
-  
+
 def split_dataset(dataset, split_ratio, mode):
     if mode=='SPLIT_CLASSES':
         nrof_classes = len(dataset)

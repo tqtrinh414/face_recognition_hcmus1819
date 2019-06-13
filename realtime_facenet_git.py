@@ -25,7 +25,7 @@ with tf.Graph().as_default():
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.6)
     sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options, log_device_placement=False))
     with sess.as_default():
-        pnet, rnet, onet = detect_face.create_mtcnn(sess, './Path to det1.npy,..')
+        pnet, rnet, onet = detect_face.create_mtcnn(sess, 'data')
 
         minsize = 20  # minimum size of face
         threshold = [0.6, 0.7, 0.7]  # three steps's threshold
@@ -36,10 +36,10 @@ with tf.Graph().as_default():
         image_size = 182
         input_image_size = 160
 
-        HumanNames = ['Human_a','Human_b','Human_c','...','Human_h']    #train human name
+        HumanNames = ['Cuong','DTrinh', 'QTrinh']    #train human name
 
         print('Loading feature extraction model')
-        modeldir = '/..Path to pre-trained model../20170512-110547/20170512-110547.pb'
+        modeldir = 'data/20170511-185253/20170511-185253.pb'
         facenet.load_model(modeldir)
 
         images_placeholder = tf.get_default_graph().get_tensor_by_name("input:0")
@@ -47,7 +47,7 @@ with tf.Graph().as_default():
         phase_train_placeholder = tf.get_default_graph().get_tensor_by_name("phase_train:0")
         embedding_size = embeddings.get_shape()[1]
 
-        classifier_filename = '/..Path to classifier model../my_classifier.pkl'
+        classifier_filename = 'my_classifier.pkl'
         classifier_filename_exp = os.path.expanduser(classifier_filename)
         with open(classifier_filename_exp, 'rb') as infile:
             (model, class_names) = pickle.load(infile)
@@ -56,9 +56,6 @@ with tf.Graph().as_default():
         video_capture = cv2.VideoCapture(0)
         c = 0
 
-        # #video writer
-        # fourcc = cv2.VideoWriter_fourcc(*'DIVX')
-        # out = cv2.VideoWriter('3F_0726.avi', fourcc, fps=30, frameSize=(640,480))
 
         print('Start Recognition!')
         prevTime = 0
@@ -115,7 +112,6 @@ with tf.Graph().as_default():
                         best_class_indices = np.argmax(predictions, axis=1)
                         best_class_probabilities = predictions[np.arange(len(best_class_indices)), best_class_indices]
                         cv2.rectangle(frame, (bb[i][0], bb[i][1]), (bb[i][2], bb[i][3]), (0, 255, 0), 2)    #boxing face
-
                         #plot result idx under box
                         text_x = bb[i][0]
                         text_y = bb[i][3] + 20
